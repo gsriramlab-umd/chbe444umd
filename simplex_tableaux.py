@@ -15,10 +15,11 @@ def simplex_tableaux(c,A,b,var_names,slack_names,tol=1e-4,dec=2,colormap='Greys'
     # b: inequality vector (constants in inequalities)
     # var_names and slack_names: headers
     # A and c should have the same number of columns (equal to the number of variables)
-    # A and b should have the same number of columns (equal to the number of constraints)
+    # A and b should have the same number of rows (equal to the number of constraints)
     
     import numpy as np
     import pandas as pd
+    
     
     # Examine vectors and matrix dimensions for consistency
     
@@ -92,8 +93,9 @@ def simplex_tableaux(c,A,b,var_names,slack_names,tol=1e-4,dec=2,colormap='Greys'
 
     Tlist = [T]  # store tableau in a list
     
+    
     # Use pandas to display T as a tableau
-
+    
     def conditionally_format_initial(styler):
         styler.background_gradient(axis=None,vmin=np.min(T),vmax=np.max(T),cmap=colormap)
         return styler
@@ -138,6 +140,7 @@ def simplex_tableaux(c,A,b,var_names,slack_names,tol=1e-4,dec=2,colormap='Greys'
                 if T[i,pcol] > 0 and T[i,Tcols-1]/T[i,pcol] < rval:
                     rval = T[i,Tcols-1]/T[i,pcol]
                     prow = i  # pivot row
+
                        
             # Perform pivot
             
