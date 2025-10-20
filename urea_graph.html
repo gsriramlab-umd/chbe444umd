@@ -1,0 +1,26 @@
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+<div id="calculator" style="width: 1000px; height: 600px;"></div>
+<script>
+var elt = document.getElementById('calculator');
+var Calc = Desmos.GraphingCalculator(elt);
+
+Calc.setExpression({latex:'x_1=x', id:'x1', hidden:'True'})
+Calc.setExpression({latex:'x_3=y', id:'x3', hidden:'True'})
+Calc.setExpression({latex:'x_1-x_3/2<=0', id:'const1', color:'#0000ff', fillOpacity:'0.2'})
+Calc.setExpression({latex:'-x_1/3+x_3/2<=1', id:'const2', color:'#0000ff', fillOpacity:'0.2'})
+Calc.setExpression({latex:'-x_1<=-1', id:'const3', color:'#0000ff', fillOpacity:'0.2'})
+Calc.setExpression({latex:'-x_1<=0', id:'const4', color:'#0000ff', fillOpacity:'0.2'})
+Calc.setExpression({latex:'-x_3<=0', id:'const5', color:'#0000ff', fillOpacity:'0.2'})
+Calc.setExpression({latex:'x_3/2=z', id:'obj', color:'#000000', fillOpacity:'1'})
+
+Calc.setExpression({id:'z', latex:'z=0'})
+Calc.setExpression({id:'z',sliderBounds:{min:'0', max:'4', step:'0.1'}})
+
+Calc.setExpression({latex:'(3/2,3)', color:'#000000', label:'`(1.5,3)`', showLabel:'True'})
+Calc.setExpression({latex:'(3/2,3)', color:'#000000', label:'`z_{max} = 1.5`', showLabel:'True'})
+Calc.setExpression({latex:'(1,2)', color:'#000000', label:'`(1,2)`', showLabel:'True'})
+Calc.setExpression({latex:'(1,2)', color:'#000000', label:'`z_{min} = 1`', showLabel:'True'})
+
+Calc.setMathBounds({left:-0.2,right:4,bottom:-0.2,top:4})
+Calc.updateSettings({showGrid:true,showXAxis:true,showYAxis:true,lockViewport:true,expressionsCollapsed:true})
+</script>
