@@ -61,5 +61,3 @@ plt.xlabel('x1')
 plt.ylabel('x2')
 plt.colorbar()
 plt.show()
-
-
