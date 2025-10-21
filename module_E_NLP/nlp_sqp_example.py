@@ -65,5 +65,3 @@ res = sci.optimize.minimize(z,x0,method='SLSQP',
 print(res.x)
 print(res.fun)
 print(res.success)
-
-
