@@ -1,0 +1,20 @@
+<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+<div id="calculator" style="width: 1000px; height: 400px;"></div>
+<script>
+var elt = document.getElementById('calculator');
+var Calc = Desmos.GraphingCalculator(elt);
+
+Calc.setExpression({latex:'0.05x+0.10y<=150', id:'const1', color:'#ff00ff', fillOpacity:'0.1'})
+Calc.setExpression({latex:'0.10x+0.05y<=150', color:'#ff00ff', fillOpacity:'0.1'})
+Calc.setExpression({latex:'0.05x+0.15y<=150', color:'#ff00ff', fillOpacity:'0.1'})
+Calc.setExpression({latex:'0.20y<=150', color:'#ff00ff', fillOpacity:'0.1'})
+Calc.setExpression({latex:'5x+10y=z', color:'#000000', fillOpacity:'0.1'})
+
+Calc.setExpression({id:'z', latex:'z=0'})
+Calc.setExpression({id:'z',sliderBounds:{min:'0', max:'15000', step:' 1000'}})
+
+Calc.setExpression({latex:'(1200, 600)', label:'optimum', showLabel:'True'})
+
+Calc.setMathBounds({left:-100,right:2000,bottom:-100,top:2000})
+Calc.updateSettings({showGrid:true,showXAxis:true,showYAxis:true,lockViewport:true,expressionsCollapsed:true})
+</script>
