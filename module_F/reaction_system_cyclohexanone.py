@@ -144,8 +144,8 @@ ff = np.zeros_like(xx)  # initialize to zero, same shape as xx
 gg = np.zeros_like(xx)  # initialize to zero, same shape as xx
 
 # This double for loop is a tad inefficient and can be made efficient
-# by vectorizing or 'broadcasting'
-# But it is used here as its logic is very easy to understand
+# by vectorizing or 'broadcasting', but it is used here as its logic
+# is very easy to understand
 for i in range(len(X)):
     for j in range(len(X)):
         n = {'P': xx[i, j], 'K': yy[i, j]}  # define n = [n['P'], n['K']]
