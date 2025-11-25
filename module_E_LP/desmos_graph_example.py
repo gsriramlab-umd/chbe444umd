@@ -1,6 +1,6 @@
 # CHBE444: Design I, University of Maryland
 # Prof. Ganesh Sriram, gsriram@umd.edu
-# E.03 Distillery Allocation LPP
+# E.03 Distillery Allocation LP
 # Desmos Plot
 
 import chbe444umd as des
@@ -53,3 +53,4 @@ print(expr_java)
 # Paste the list of expressions into the console and press Enter
 # Some browsers or computers may ask you to explicitly type 'allow paste' before
 # you paste expressions into the console
+
