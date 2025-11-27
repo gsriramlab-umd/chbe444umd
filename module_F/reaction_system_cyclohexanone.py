@@ -34,7 +34,7 @@ import chbe444umd as des
 # Define P (bar) and T (K) here
 # - Choose P and T them by using guidance from the book chapter (Dimian and
 #   Bildea, 2008)
-# - It is perfectly OK to choose constant P and T (will keep the
+# - It is perfectly OK to choose constant P and T (this will keep the
 #   calculations straightforward)
 
 def kinetics(n):  # function to define kinetics in terms of n['P'] and n['K']
@@ -46,8 +46,8 @@ def kinetics(n):  # function to define kinetics in terms of n['P'] and n['K']
     # axes variables. Let us do atomic balances (learned in CHBE101) to get the
     # remaining two flow rates.
 
-    nP = n['P']  # nP: internal variable, n['P']: passed to this function
-    nK = n['K']  # nK: internal variable, n['K']: passed to this function
+    nP = n['P']  # nP is internal variable, n['P'] is passed to this function
+    nK = n['K']  # nK is internal variable, n['K'] is passed to this function
 
     # Do a balance on atomic carbon to express nA in terms of nP and nK
     # The balance should look like: carbon atoms in = carbon atoms out
@@ -132,8 +132,8 @@ des.convexify(ax, boundaries=[pfr, cstr],
 
 # Draw the rate field boundaries
 # These boundaries are inequality lines (contours) for nA = 0 and nH = 0
-f = lambda n: # LHS of f(n['P'], n['K'] constants) reflecting that nA = 0
-g = lambda n: # LHS of g(n['P'], n['K'] constants) reflecting that nH = 0
+f = lambda n:  # LHS of f(n['P'], n['K'] constants) reflecting that nA = 0
+g = lambda n:  # LHS of g(n['P'], n['K'] constants) reflecting that nH = 0
 
 X = np.linspace(0, 1, 11)  # calculate contours at 0, 0.1, ..., 1 on each axis
 
@@ -149,8 +149,8 @@ gg = np.zeros_like(xx)  # initialize to zero, same shape as xx
 for i in range(len(X)):
     for j in range(len(X)):
         n = {'P': xx[i, j], 'K': yy[i, j]}  # define n = [n['P'], n['K']]
-        ff[i, j] = f(n)  # pass to function that gets nA or nH constraint
-        gg[i, j] = g(n)  # pass to function that gets nA or nH constraint
+        ff[i, j] = f(n)  # pass to function that computes nA or nH constraint
+        gg[i, j] = g(n)  # pass to function that computes nA or nH constraint
 
 # Plot contours
 ax.contour(xx, yy, ff, 'k-', levels=[0])
